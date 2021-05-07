@@ -145,7 +145,7 @@ I believe that was a lot to take in. Here are some articles I referred when I tr
 3. Understanding Pre-trained CNN - https://towardsdatascience.com/4-pre-trained-cnn-models-to-use-for-computer-vision-with-transfer-learning-885cb1b2dfc
 
 
-
+$\hat{x}$
 
 
 
