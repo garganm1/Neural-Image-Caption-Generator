@@ -101,7 +101,7 @@ The calculation of the attention process hinges on the below formulae (note that
 
 ![fig7](https://user-images.githubusercontent.com/55252306/117485771-cd285780-af36-11eb-83c6-17944bccf8eb.PNG)
 
-**Above Figure:- Formula 4 and 1 respectively (for deriving attention weights ($ \alpha _{ti} $) )**
+**Above Figure:- Formula 4 and 1 respectively (for deriving attention weights (α<sub>ti</sub>) )**
 
 ![fig4](https://user-images.githubusercontent.com/55252306/117485829-dd403700-af36-11eb-8b8d-584b16d3a1ed.PNG)
 
