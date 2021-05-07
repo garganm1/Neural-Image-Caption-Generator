@@ -16,8 +16,8 @@ The dataset has been taken from - https://www.kaggle.com/adityajn105/flickr8k
 
 The notebook is divided into sections as outlined below -
 
-Section 1: Data Processing
-Section 2: Data Tokenization
+Section 1: Data Processing <br>
+Section 2: Data Tokenization <br>
 Section 3: Defining the Model
 Section 4: Training the Model
 Section 5: Inference from the Model (Greedy & Beam Search)
