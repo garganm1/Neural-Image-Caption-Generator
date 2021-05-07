@@ -61,3 +61,37 @@ Basically, the tokenized form would replace the word with a unique number that w
 * Notice the padding done at the end of sentence 1 (two 0's added). This will be done based on the maximum length of a sentence in the corpus
 * Notice the repetiton of 3 in both tokenized forms which represent the word 'here' being repeated
 
+All processed data is then stored as pickle files.
+
+## Section 3: Defining the Model
+
+**Let us build up the concept slowly. Starting discussion with an Encoder-Decoder model without any attention mechanism**
+
+![fig2](https://user-images.githubusercontent.com/55252306/117485439-5f7c2b80-af36-11eb-8fb0-0e11ee12596d.PNG)
+
+The blue cells denote the encoder and the red cells denote the decoder layers.
+
+After the CNN model extracts features from the image, these are fed to the decoder (red hidden) layer that learns the sequences of caption along with the source features from the encoder.
+
+The decoder layer then makes a projection layer which spits out a prediction vector of size V (vocabulary size of target corpus). The maximum probability value of this vector denotes the word that the model is predicting which is judged against what should be produced as a loss function.
+
+Notice the \<start> at the start of target input words which is the first word fed to the decoder model (representing the start of decoding) and the prediction at this point is the first word of caption. The last word of target input spits out \</end> that would denote the end of prediction.
+
+We have employed only one hidden layer in this notebook in the decoder.
+
+**Teacher Forcing:**
+
+We will implement teacher forcing during training. This means that the model is fed with the next word in the caption as an input to the decoder and that too in a sequential manner. In summary, it is the technique where the target word is passed as the next input to the decoder. Note that this won't and can not be implemented during inference
+
+The inference, i.e. generating image caption once the model has been trained, would be a little different. Let's see how below-
+
+Everything is the same except we don't know the target input to be fed to the model when you would be inferring (teacher forcing above).
+
+In this case, the first prediction of \<start> (Giraffes) is fed as an input of next target word to the model the produce the next word in the caption. The sequence continues until we hit \</end> where the captioning stops.
+
+Above figure is a type of greedy decoding since we are only looking at the word with the highest probability in the prediction vector. This is very basic seq2seq model. Adding the attention mechanism to it greatly enhances its performance. If you have understood the above architecture, move below to understand **Attention**
+
+**Let's now start with an Encoder-Decoder model with Bahdanau attention mechanism**
+
+
+
