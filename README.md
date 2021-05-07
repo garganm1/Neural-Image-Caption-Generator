@@ -105,7 +105,7 @@ The calculation of the attention process hinges on the below formulae (note that
 
 ![fig4](https://user-images.githubusercontent.com/55252306/117485829-dd403700-af36-11eb-8b8d-584b16d3a1ed.PNG)
 
-**Above Figure:- Formula 2 (for computing context vector (z<sub>t</sub>) )**
+**Above Figure:- Formula 2 (for computing context vector (ẑ<sub>t</sub>) )**
 
 ![fig5](https://user-images.githubusercontent.com/55252306/117485864-e6c99f00-af36-11eb-9fda-9e1d203352f7.PNG)
 
