@@ -48,12 +48,12 @@ The captions need to be tokenized in order to be fed to the Decoder inside the m
 
 This means that for two texts in the captions corpus -
 
-S1:- I am here
+S1:- I am here <br>
 S2:- He is here right now
 
 The tokenized form would be -
 
-S1:- [1, 2, 3, 0, 0]
+S1:- [1, 2, 3, 0, 0] <br>
 S2:- [4, 5, 3, 6, 7]
 
 Basically, the tokenized form would replace the word with a unique number that would represent that word.
