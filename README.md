@@ -18,7 +18,26 @@ The notebook is divided into sections as outlined below -
 
 Section 1: Data Processing <br>
 Section 2: Data Tokenization <br>
-Section 3: Defining the Model
-Section 4: Training the Model
-Section 5: Inference from the Model (Greedy & Beam Search)
+Section 3: Defining the Model <br>
+Section 4: Training the Model <br>
+Section 5: Inference from the Model (Greedy & Beam Search) <br>
 Section 6: Evaluation of the Model
+
+## Section 1: Data Processing
+
+After downloading the dataset, the images are places in 'Images' directory while 'captions.txt' is placed in the root directory.
+
+Since, this is notebook is meant to be descriptive, the number of captions are limited to 30,000 (out of 40,455)
+
+The first task in processing is to resize all images to a fixed size (chosen size is 250,250). The text in captions is cleaned and processed to include a 'start' and 'end' signal to indicate the beginning and ending of sentence respectively. 
+
+(I had thought of padding the image when resizing it to maintatin aspect ratio but since the model will have to attend on specific portions of the image, this was completely wasteful for the model)
+
+The parsed images are stored in a dictionary wherein the key is the image name and value is the parsed image. A dataframe of captions is also generated that has the image name in one column, the original caption in the next column and the processed caption in the last column.
+
+| image | caption | caption_p |
+| ------------- | ------------- | ------------- |
+| 3508882611_3947c0dbf5.jpg | A large grey dog is jumping over a white hurdle .	 | 	<start> a large grey dog is jumping over a whi... |
+| 1000268201_693b08cb0e.jpg | A little girl in a pink dress going into a woo... | <start> a little girl in a pink dress going in... |
+
+and so on...
