@@ -93,5 +93,63 @@ Above figure is a type of greedy decoding since we are only looking at the word 
 
 **Let's now start with an Encoder-Decoder model with Bahdanau attention mechanism**
 
+![fig3](https://user-images.githubusercontent.com/55252306/117485738-c26dc280-af36-11eb-84c3-c772ec13a1e9.PNG)
+
+You will notice the addition of 'attention' to the above discussed model. Also, the picture has VGG-16 as the feature extractor but we are using Inception-V3 which is a pre-trained model
+
+The calculation of the attention process hinges on the below formulae (note that soft attention is implemented) :-
+
+![fig7](https://user-images.githubusercontent.com/55252306/117485771-cd285780-af36-11eb-83c6-17944bccf8eb.PNG)
+
+**Above Figure:- Formula 4 and 1 respectively (for deriving attention weights ($ \alpha _{ti} $) )**
+
+![fig4](https://user-images.githubusercontent.com/55252306/117485829-dd403700-af36-11eb-8b8d-584b16d3a1ed.PNG)
+
+**Above Figure:- Formula 2 (for computing context vector ($ \hat{z _{t}} $) )**
+
+![fig5](https://user-images.githubusercontent.com/55252306/117485864-e6c99f00-af36-11eb-9fda-9e1d203352f7.PNG)
+
+**Above Figure:- Formula 3 (for computing the attention vector ($ \alpha _{t} $) )**
+
+![fig6](https://user-images.githubusercontent.com/55252306/117485894-ee894380-af36-11eb-9bac-d02f67f9a4a7.PNG)
+
+**Above Figure:- Formula for computing attention score (Bahdanau Attention)**
+
+**Steps of Computation:-**
+
+The attention computation happens at every decoder time step. It consists of the following stages:
+
+1. The extracted features ($ a _i $) from the encoder are compared with each target hidden state ($ h _{t-1} $) to derive attention weights ($ \alpha _{ti} $).
+2. Based on the attention weights ($ \alpha _{ti} $), we compute a context vector ($ \hat{z _{t}} $) as the weighted average of the source image features.
+3. Then we combine the context vector ($ \hat{z _{t}} $) with the current target hidden state ($ h _{t-1} $) to yield the final attention vector ($ \alpha _{t} $)
+4. The attention vector ($ \alpha _{t} $) is then fed as an input to the next time step (input feeding)
+
+The way of comparing the input features with the current target hidden state has been researched and Bahdanau' additive style has been employed in this notebook (**Formula 4** and last formula in above). There are other comparative measures such as Luong's multiplicative style as well as their variations and combinations. The paper 'Show, Attend and Tell' also talks about a Hard Attention where the decoder focuses on a sinlge point as compared to an area of an image in soft attention.
+
+The comparison gives out a score when all input features are compared with the current decoder hidden state. This score is fed to a softmax layer (**Formula 1**) that measures the score of the current hidden state against the input features (which are the attention weights).
+
+The weights are then assessed with the input features so that the model focuses on where it should focus in identifying objects/actions in the input image (**Formula 2**). This produces a context vector that contains information where the context lies in the input features to generate the current word in the caption
+
+The context vector is concatenated with the current target hidden state and then activated to get an attention vector (**Formula 3**) that encompasses all information of source input and for target input - everything upto the current decoder state.
+
+Finally, the hidden state obtained during computation of attention vector is added as an input to the next word in decoder input so that the prior information is passed on in a sequential manner to its embedding and subsequent learning.
+
+Notice the **teacher forcing** here during training when the target word is passed as the next input to the decoder. Again, as told earlier, it is an aspect only built-in during the training and the inference will act without it.
+
+During the inference, everything is same except that teacher-forcing isn't implemented and the 'prediction' word from the model itself is fed as the next input to the decoder (along with the attention vector)
+
+I believe that was a lot to take in. Here are some articles I referred when I tried to understand it all and I hope that these will be able to get you some more in-depth knowledge and insights -
+
+1. Base Article - https://www.tensorflow.org/tutorials/text/image_captioning
+2. Understanding 'Show, Attend & Tell' - https://arxiv.org/pdf/1502.03044.pdf
+3. Understanding Pre-trained CNN - https://towardsdatascience.com/4-pre-trained-cnn-models-to-use-for-computer-vision-with-transfer-learning-885cb1b2dfc
+
+
+
+
+
+
+
+
 
 
