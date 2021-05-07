@@ -109,7 +109,7 @@ The calculation of the attention process hinges on the below formulae (note that
 
 ![fig5](https://user-images.githubusercontent.com/55252306/117485864-e6c99f00-af36-11eb-9fda-9e1d203352f7.PNG)
 
-**Above Figure:- Formula 3 (for computing the attention vector ($ \alpha _{t} $) )**
+**Above Figure:- Formula 3 (for computing the attention vector (α<sub>t</sub>) )**
 
 ![fig6](https://user-images.githubusercontent.com/55252306/117485894-ee894380-af36-11eb-9bac-d02f67f9a4a7.PNG)
 
@@ -119,10 +119,10 @@ The calculation of the attention process hinges on the below formulae (note that
 
 The attention computation happens at every decoder time step. It consists of the following stages:
 
-1. The extracted features ($ a _i $) from the encoder are compared with each target hidden state ($ h _{t-1} $) to derive attention weights ($ \alpha _{ti} $).
-2. Based on the attention weights ($ \alpha _{ti} $), we compute a context vector ($ \hat{z _{t}} $) as the weighted average of the source image features.
-3. Then we combine the context vector ($ \hat{z _{t}} $) with the current target hidden state ($ h _{t-1} $) to yield the final attention vector ($ \alpha _{t} $)
-4. The attention vector ($ \alpha _{t} $) is then fed as an input to the next time step (input feeding)
+1. The extracted features (a<sub>i</sub>) from the encoder are compared with each target hidden state (h<sub>t-1</sub>) to derive attention weights (α<sub>ti</sub>).
+2. Based on the attention weights (α<sub>ti</sub>), we compute a context vector (ẑ<sub>t</sub>)) as the weighted average of the source image features.
+3. Then we combine the context vector (ẑ<sub>t</sub>) with the current target hidden state (h<sub>t-1</sub>) to yield the final attention vector (α<sub>t</sub>)
+4. The attention vector (α<sub>t</sub>) is then fed as an input to the next time step (input feeding)
 
 The way of comparing the input features with the current target hidden state has been researched and Bahdanau' additive style has been employed in this notebook (**Formula 4** and last formula in above). There are other comparative measures such as Luong's multiplicative style as well as their variations and combinations. The paper 'Show, Attend and Tell' also talks about a Hard Attention where the decoder focuses on a sinlge point as compared to an area of an image in soft attention.
 
