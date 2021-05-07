@@ -144,5 +144,41 @@ I believe that was a lot to take in. Here are some articles I referred when I tr
 2. Understanding 'Show, Attend & Tell' - https://arxiv.org/pdf/1502.03044.pdf
 3. Understanding Pre-trained CNN - https://towardsdatascience.com/4-pre-trained-cnn-models-to-use-for-computer-vision-with-transfer-learning-885cb1b2dfc
 
+## Section 4: Training the Model
 
-\hat{\mathbf{a}}
+An Object-oriented approach is applied as the Tensorflow-Keras libaries don't have predefined layers that can incorporate this architecture.
+
+Once the classes are formulated and model has been built (along with loss calculation and optimizer defined), the tf.GradientTape() function will be implemented to train the model on each batch and update the gradients of the trainable parameters. The model is trained with epochs set as 100 (with 3 patience), with shuffling of data in each epoch. For more information on this, please refer the notebook on how everything is defined and formulated.
+
+## Section 5: Inference from the Model
+
+**1. Greedy Search**
+
+Greedy Search is the most basic inference algorithm. It takes the word with the highest probability at each output from the decoder input. This word is then fed to the next time step of the decoder to predict the next word until we hit the 'end' signal
+
+Some outputs from Greedy Search:-
+
+![fig8](https://user-images.githubusercontent.com/55252306/117490917-7a05d300-af3d-11eb-8db9-d3ad112e2d29.PNG)
+
+![fig9](https://user-images.githubusercontent.com/55252306/117490926-7d00c380-af3d-11eb-9728-d6690040db31.PNG)
+
+**2. Beam Search**
+
+Beam Search is slightly complicated. It produces K (which is user-defined) number of translations based on highest conditional probabilities of the words. It has been explained in detail in one of my other projects (link - https://github.com/garganm1/Neural-Machine-Translation-with-Bahdanau-Attention). Please see that to understand how the algorithm works.
+
+Some outputs from Beam Search:-
+
+![fig10](https://user-images.githubusercontent.com/55252306/117491120-c7824000-af3d-11eb-91fd-5b2a551b5c17.PNG)
+
+![fig11](https://user-images.githubusercontent.com/55252306/117491127-c9e49a00-af3d-11eb-9c49-90506b006b74.PNG)
+
+
+## Section 6: Evaluation of the Model
+
+Any model has to be evaluated to know how good it is or to compare it with other models.
+
+Captions are textual data and BLEU is a metric that can help to evaluate the translations with the correct translations that should be given. It is based on an n-gram model where it looks at the words appearing in the candidate translation with the reference translation (with combinations). There are obvious limitations to this evaluation such as it will look at the word's and nearby words' positions only.
+
+NLTK's bleu_score library gives this functionality. It looks at 1-gram to 4-gram and gives an average value (not exactly average) for how good the translations match with each other. You can evaluate the model on a test set using corplus_bleu. For more information, do refer nltk library and this article - https://machinelearningmastery.com/calculate-bleu-score-for-text-python/
+
+On testing the model with BLEU, we find that even though the generated captions are quite close to what is there in the image but the BLEU score is quite low. BLEU ranges from 0(denoting no match) to 1(denoting perfect match). As stated earlier, this is a limitation of BLEU but it is still widely practiced as a metric to measure textual models' performances.
