@@ -105,7 +105,7 @@ The calculation of the attention process hinges on the below formulae (note that
 
 ![fig4](https://user-images.githubusercontent.com/55252306/117485829-dd403700-af36-11eb-8b8d-584b16d3a1ed.PNG)
 
-**Above Figure:- Formula 2 (for computing context vector ($ \hat{z _{t}} $) )**
+**Above Figure:- Formula 2 (for computing context vector (z<sub>t</sub>) )**
 
 ![fig5](https://user-images.githubusercontent.com/55252306/117485864-e6c99f00-af36-11eb-9fda-9e1d203352f7.PNG)
 
@@ -145,18 +145,4 @@ I believe that was a lot to take in. Here are some articles I referred when I tr
 3. Understanding Pre-trained CNN - https://towardsdatascience.com/4-pre-trained-cnn-models-to-use-for-computer-vision-with-transfer-learning-885cb1b2dfc
 
 
-A
-
-B
-
-$\hat{x}$
-
-$^{x}$
-
-^{o}
-
-$\widehat{h}$
-
-\H{o}
-
-â
+\hat{\mathbf{a}}
