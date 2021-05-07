@@ -35,9 +35,29 @@ The first task in processing is to resize all images to a fixed size (chosen siz
 
 The parsed images are stored in a dictionary wherein the key is the image name and value is the parsed image. A dataframe of captions is also generated that has the image name in one column, the original caption in the next column and the processed caption in the last column.
 
-| image | caption | caption_p |
+| image | caption | caption_processed |
 | ------------- | ------------- | ------------- |
 | 3508882611_3947c0dbf5.jpg | A large grey dog is jumping over a white hurdle .	 | 	<start> a large grey dog is jumping over a whi... |
 | 1000268201_693b08cb0e.jpg | A little girl in a pink dress going into a woo... | <start> a little girl in a pink dress going in... |
 
 and so on...
+
+## Section 2: Data Tokenization
+
+The captions need to be tokenized in order to be fed to the Decoder inside the model. All empty fields are padded with 0s. The tensorflow's tokenizer and padding functionalities will tokenize the processed text.
+
+This means that for two texts in the captions corpus -
+
+S1:- I am here
+S2:- He is here right now
+
+The tokenized form would be -
+
+S1:- [1, 2, 3, 0, 0]
+S2:- [4, 5, 3, 6, 7]
+
+Basically, the tokenized form would replace the word with a unique number that would represent that word.
+
+* Notice the padding done at the end of sentence 1 (two 0's added). This will be done based on the maximum length of a sentence in the corpus
+* Notice the repetiton of 3 in both tokenized forms which represent the word 'here' being repeated
+
