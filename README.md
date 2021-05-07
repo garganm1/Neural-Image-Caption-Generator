@@ -10,4 +10,15 @@ This work is inspired from the first work in Attention Based Neural Image Captio
 
 Encoder-Decoder models have been in existence for a long time. Encoder model's primary objective is to learn the sequences of the source input while the Decoder Model's objective is to interpret/transform it into some output. While the Encoder-Decoder models have worked good, Bahdanau et. al. in circa 2014 came up with an Attention Mechanism that helps the decoder to focus on some representations of the input while interpret/transform and spitting out the output. This led to remarkable improvements in the models' performance and now Attention is being implemented to several applications and even in other domains such as Computer Vision, etc.
 
-In this notebook, we need to have tensorflow (2.4) installed in order to run it. Some knowledge on Deep NN Models is assumed as well as knowledge on RNN-LSTM networks
+In this notebook, we need to have tensorflow (2.4) installed in order to run it. Some knowledge on Deep NN Models is assumed as well as knowledge on RNN-LSTM networks.
+
+The dataset has been taken from - https://www.kaggle.com/adityajn105/flickr8k
+
+The notebook is divided into sections as outlined below -
+
+Section 1: Data Processing
+Section 2: Data Tokenization
+Section 3: Defining the Model
+Section 4: Training the Model
+Section 5: Inference from the Model (Greedy & Beam Search)
+Section 6: Evaluation of the Model
