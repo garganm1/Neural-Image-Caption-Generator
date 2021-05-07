@@ -37,8 +37,8 @@ The parsed images are stored in a dictionary wherein the key is the image name a
 
 | image | caption | caption_processed |
 | ------------- | ------------- | ------------- |
-| 3508882611_3947c0dbf5.jpg | A large grey dog is jumping over a white hurdle .	 | 	/<start> a large grey dog is jumping over a whi... |
-| 1000268201_693b08cb0e.jpg | A little girl in a pink dress going into a woo... | /<start> a little girl in a pink dress going in... |
+| 3508882611_3947c0dbf5.jpg | A large grey dog is jumping over a white hurdle .	 | 	\<start\> a large grey dog is jumping over a whi... |
+| 1000268201_693b08cb0e.jpg | A little girl in a pink dress going into a woo... | /<start/> a little girl in a pink dress going in... |
 
 and so on...
 
