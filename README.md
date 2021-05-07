@@ -149,7 +149,7 @@ I believe that was a lot to take in. Here are some articles I referred when I tr
 
 
 
-
+\alpha
 
 
 
