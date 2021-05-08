@@ -158,9 +158,10 @@ Greedy Search is the most basic inference algorithm. It takes the word with the 
 
 Some outputs from Greedy Search:-
 
-![fig8](https://user-images.githubusercontent.com/55252306/117490917-7a05d300-af3d-11eb-8db9-d3ad112e2d29.PNG)
+![fig8](https://user-images.githubusercontent.com/55252306/117554249-739e5680-b024-11eb-8a79-1f8264ef3189.PNG)
 
-![fig9](https://user-images.githubusercontent.com/55252306/117490926-7d00c380-af3d-11eb-9728-d6690040db31.PNG)
+![fig9](https://user-images.githubusercontent.com/55252306/117554254-7731dd80-b024-11eb-97f5-56424895d06e.PNG)
+
 
 **2. Beam Search**
 
@@ -168,9 +169,9 @@ Beam Search is slightly complicated. It produces K (which is user-defined) numbe
 
 Some outputs from Beam Search:-
 
-![fig10](https://user-images.githubusercontent.com/55252306/117491120-c7824000-af3d-11eb-91fd-5b2a551b5c17.PNG)
+![fig10](https://user-images.githubusercontent.com/55252306/117554260-7d27be80-b024-11eb-9c6f-d854cdaf17bb.PNG)
 
-![fig11](https://user-images.githubusercontent.com/55252306/117491127-c9e49a00-af3d-11eb-9c49-90506b006b74.PNG)
+![fig11](https://user-images.githubusercontent.com/55252306/117554263-7f8a1880-b024-11eb-9403-93cc5f9cd83d.PNG)
 
 
 ## Section 6: Evaluation of the Model
