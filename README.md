@@ -148,7 +148,7 @@ I believe that was a lot to take in. Here are some articles I referred when I tr
 
 An Object-oriented approach is applied as the Tensorflow-Keras libaries don't have predefined layers that can incorporate this architecture.
 
-Once the classes are formulated and model has been built (along with loss calculation and optimizer defined), the tf.GradientTape() function will be implemented to train the model on each batch and update the gradients of the trainable parameters. The model is trained with epochs set as 100 (with 3 patience), with shuffling of data in each epoch. For more information on this, please refer the notebook on how everything is defined and formulated.
+Once the classes are formulated and model has been built (along with loss calculation and optimizer defined), the tf.GradientTape() function will be implemented to train the model on each batch and update the gradients of the trainable parameters. The model is trained with epochs set as 20 (with 2 patience), with shuffling of data in each epoch. For more information on this, please refer the notebook on how everything is defined and formulated.
 
 ## Section 5: Inference from the Model
 
